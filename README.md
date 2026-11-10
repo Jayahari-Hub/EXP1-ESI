@@ -1,17 +1,20 @@
 # FLASHING-OF-LEDS-WITH-LPC-1768
 
-# AIM: 
+## AIM: 
+
    To interface and toggle the led with ARM LPC 1768 microprocessor           
-           
-# COMPONENTS REQUIRED:
+   
+## COMPONENTS REQUIRED:
 ##  HARDWARE:
+
 ARM LPC1768
 LED
+
 ## SOFTWARE:
+
 KEIL MICRO VISION 4.0 IDE
 
-# PROCEDURE:
-
+## PROCEDURE:
 
 ⮚	Open the Keil software and select the New uvision project from Project Menu as shown below.
 ⮚	Browse to your project folder and provide the project name and click on save.
@@ -34,22 +37,25 @@ Command: fromelf --bin projectname.axf --output filename.bin
 ⮚	.Bin file is generated after a rebuild.
 ⮚	Check the project folder for the generated .Bin file.
 
-# ADD FILES:
+## ADD FILES:
+
 Target1:
 Source group1:
 Startuplpc17xx.s, main.c (t), delay.c (t), systemlpc17xx.c (t), gpio.c (t)
 Header:
 Delay.h, stdutils.h, gpioi.h
 
-# PIN DIAGRAM :
+## PIN DIAGRAM :
+
  <img width="587" height="370" alt="image" src="https://github.com/user-attachments/assets/cf162efc-090d-49f4-98b9-6da98afef0c6" />
 
 
-# CIRCUIT DIAGRAM:
+## CIRCUIT DIAGRAM:
+
  <img width="502" height="270" alt="image" src="https://github.com/user-attachments/assets/20956ca6-747d-4e4b-bb43-3be7e3b62e04" />
 
  
-# PROGRAM:
+## PROGRAM:
 ```
  #include <lpc17xx.h>
  #include "delay.h" //User defined library which contains the delay routines
@@ -67,24 +73,19 @@ Delay.h, stdutils.h, gpioi.h
 		/*Turn On all the leds and wait for 100ms*/
 		GPIO_PinWrite(LED,HIGH); //Make all the Port pin as high
 		DELAY_ms(100);
+		
+		
 		GPIO_PinWrite(LED,LOW); //Make all thw Port pin as low
 		DELAY_ms(100);
 	}
-}
+}		
 ```
-
-
  
-# Output:
+## Output:
+
 <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/6d795074-45b3-4a22-8adb-0396fdd77846" />
 
-# Result:
+## Result:
+
 Thus a LED is interfaced with ARM LPC1768 microprocessor and its blinking was
 verified successfully.
-
-
-
-
-
-
-
